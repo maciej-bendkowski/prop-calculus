@@ -1,0 +1,11 @@
+#!/bin/bash
+pushd $HOME/code/TypesAndProofs/ > /dev/null
+result=$(echo "faprove($1)." | timeout $2 bash go 2> /dev/null | awk 'NF')
+pushd > /dev/null
+
+if [[ $result == 'true.' ]]; then
+   exit 0
+else
+   exit 1
+fi
+

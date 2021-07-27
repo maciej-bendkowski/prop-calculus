@@ -1,0 +1,13 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "prop-calculus:lib"
+
+    - path: "./app/Main.hs"
+      component: "prop-calculus:exe:prop-calculus-exe"
+
+    - path: "./app/Paths_prop_calculus.hs"
+      component: "prop-calculus:exe:prop-calculus-exe"
+
+    - path: "./test"
+      component: "prop-calculus:test:prop-calculus-test"

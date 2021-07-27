@@ -1,0 +1,71 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 8f9855951af100f132d743b9aef43380a56846af3a98b68fb7a3574fd57fc740
+
+name:           prop-calculus
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/prop-calculus#readme>
+homepage:       https://github.com/githubuser/prop-calculus#readme
+bug-reports:    https://github.com/githubuser/prop-calculus/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2021 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/prop-calculus
+
+library
+  exposed-modules:
+      Prover
+    , BinTree
+    , Samplers
+    , Proposition
+  other-modules:
+      Paths_prop_calculus
+  hs-source-dirs:
+      src
+  build-depends:
+      array >= 0.5 && < 0.6
+    , random >= 1.1 && < 1.2
+    , MonadRandom >= 0.4
+    , combinat
+    , process >= 1.6.5.0
+    , base >=4.7 && <5
+  ghc-options: -Wall -Werror -O2
+  default-language: Haskell2010
+
+executable prop-prover
+  main-is: Main.hs
+  other-modules:
+      Paths_prop_calculus
+  hs-source-dirs:
+      app
+  --ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , prop-calculus
+  default-language: Haskell2010
+
+test-suite prop-calculus-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_prop_calculus
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , prop-calculus
+  default-language: Haskell2010
